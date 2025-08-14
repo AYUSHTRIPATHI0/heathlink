@@ -1,0 +1,141 @@
+import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import {
+  HeartPulse,
+  Footprints,
+  Flame,
+  MessageCircle,
+  ListTodo,
+  BrainCircuit,
+  Pill,
+  ArrowRight,
+} from "lucide-react";
+import { cn } from "@/lib/utils";
+
+
+const quickStats = [
+  {
+    label: "Heart Rate",
+    value: "78",
+    unit: "bpm",
+    icon: HeartPulse,
+    color: "text-red-500",
+  },
+  {
+    label: "Steps",
+    value: "8,230",
+    unit: "today",
+    icon: Footprints,
+    color: "text-blue-500",
+  },
+  {
+    label: "Calories",
+    value: "1,240",
+    unit: "kcal",
+    icon: Flame,
+    color: "text-orange-500",
+  },
+];
+
+const featureCards = [
+  {
+    href: "/dashboard/chat",
+    title: "Chat Assistant",
+    description: "Get answers and suggestions from your AI assistant.",
+    icon: MessageCircle,
+  },
+  {
+    href: "/dashboard/todo",
+    title: "To-Do List",
+    description: "Manage your daily health tasks and goals.",
+    icon: ListTodo,
+  },
+  {
+    href: "/dashboard/predictions",
+    title: "Health Predictions",
+    description: "AI-powered insights into your future well-being.",
+    icon: BrainCircuit,
+  },
+  {
+    href: "/dashboard/predictions",
+    title: "Medication & Doctors",
+    description: "Get recommendations and find specialists.",
+    icon: Pill,
+  },
+];
+
+export default function DashboardPage() {
+  return (
+    <div className="space-y-8">
+      <div className="flex justify-between items-start">
+        <div>
+          <h1 className="text-3xl font-bold font-headline">Hi, User 👋</h1>
+          <p className="text-muted-foreground">
+            Here's your health summary for today.
+          </p>
+        </div>
+        <Link href="/dashboard/profile">
+          <Avatar className="h-12 w-12 cursor-pointer ring-2 ring-offset-2 ring-offset-background ring-transparent transition-all hover:ring-primary">
+            <AvatarImage src="https://i.pravatar.cc/150?u=user" alt="User" />
+            <AvatarFallback>U</AvatarFallback>
+          </Avatar>
+        </Link>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-3">
+        {quickStats.map((stat) => (
+          <Card key={stat.label} className="shadow-md hover:shadow-lg transition-shadow">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">
+                {stat.label}
+              </CardTitle>
+              <stat.icon className={cn("h-5 w-5 text-muted-foreground", stat.color)} />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">{stat.value}</div>
+              <p className="text-xs text-muted-foreground">{stat.unit}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      <div>
+        <h2 className="text-2xl font-bold font-headline mb-4">Explore Features</h2>
+        <div className="grid gap-4 md:grid-cols-2">
+          {featureCards.map((feature) => (
+            <Link key={feature.title} href={feature.href} className="group">
+              <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+                <CardHeader>
+                  <div className="flex items-start gap-4">
+                    <div className="bg-primary/10 p-3 rounded-lg">
+                      <feature.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <CardTitle className="font-headline text-lg">{feature.title}</CardTitle>
+                      <CardDescription className="mt-1">{feature.description}</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="mt-auto">
+                    <div className="flex items-center text-sm text-primary font-medium group-hover:gap-2 transition-all">
+                      Go to {feature.title} <ArrowRight className="ml-1 h-4 w-4" />
+                    </div>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+    
