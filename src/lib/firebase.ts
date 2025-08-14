@@ -8,7 +8,7 @@ const firebaseConfig = {
   "projectId": "healthlink-iymsz",
   "appId": "1:87432400493:web:14845235939d74a2e77964",
   "storageBucket": "healthlink-iymsz.appspot.com",
-  "apiKey": process.env.NEXT_PUBLIC_GEMINI_API_KEY,
+  "apiKey": process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   "authDomain": "healthlink-iymsz.firebaseapp.com",
   "messagingSenderId": "87432400493",
   "measurementId": ""
