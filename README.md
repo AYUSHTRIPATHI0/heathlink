@@ -4,7 +4,10 @@
 
 [Live Demo → heathlink.vercel.app](https://heathlink.vercel.app/)
 
-![Health Sync Dashboard](/screenshot_.png)
+
+<p align="center">
+  <img src="/screenshot_.png" alt="Health Sync Dashboard" width="800"/>
+</p>
 
 ## Team Members
 
