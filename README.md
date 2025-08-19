@@ -6,7 +6,7 @@
 
 
 <p align="center">
-  <img src="/screenshot_.png" alt="Health Sync Dashboard" width="800"/>
+  <img src="/screenshot_.png" alt="Health Sync Dashboard" width="100"/>
 </p>
 
 ## Team Members
