@@ -4,7 +4,7 @@
 
 [Live Demo → heathlink.vercel.app](https://heathlink.vercel.app/)
 
-6000-firebase-studio-1755174592201.cluster-c36dgv2kibakqwbbbsgmia3fny.cloudworkstations.dev_.png
+![Health Sync Dashboard](/6000-firebase-studio.png)
 
 ## Team Members
 
